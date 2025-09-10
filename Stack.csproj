@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="devDept.Eyeshot.Control.Win.Trial" Version="2025.1.190" />
+    <PackageReference Include="devDept.Eyeshot.Control.Win.Trial" Version="2025.3.447" />
   </ItemGroup>
 
 </Project>

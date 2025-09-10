@@ -15,8 +15,8 @@ namespace Stack
         private const double SpeedIncrement = 0.02; // Increment value for brick speed at each new brick
         private const double MaxDisplacementCoefficient = 1.3; // Maximum displacement ratio of the moving brick
 
-        private Mesh _movingBrick; // The brick currently moving
-        private Mesh _topBrick;    // The last brick placed on the stack
+        private Mesh _movingBrick = null!; // The brick currently moving
+        private Mesh _topBrick = null!;    // The last brick placed on the stack
         private bool _movingRight; // Indicates if the brick is currently moving to the right
         private bool _movingOnX = true; // Indicates movement direction along X (true) or Y (false)
         private double _speed; // Current movement speed of the brick
