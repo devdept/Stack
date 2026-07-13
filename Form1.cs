@@ -58,7 +58,9 @@ namespace Stack
             Init();
         }
 
-        // Initializes or resets the game state and starts a new game
+        /// <summary>
+        /// Initializes or resets the game state and starts a new game.
+        /// </summary>
         private void Init()
         {
             _movingRight = true;
@@ -96,7 +98,9 @@ namespace Stack
             animationTimer.Start();
         }
 
-        // Creates and positions the next moving brick at the top of the stack.
+        /// <summary>
+        /// Creates and positions the next moving brick at the top of the stack.
+        /// </summary>
         private void CreateBlock()
         {
             _topBrick = _movingBrick;
@@ -130,7 +134,9 @@ namespace Stack
             design1.ActiveViewport.Camera.Target = new Point3D(target.X, target.Y, target.Z + BrickHeight);
         }
 
-        // Moves the current brick horizontally and updates the viewport accordingly
+        /// <summary>
+        /// Moves the current brick horizontally and updates the viewport accordingly.
+        /// </summary>
         private void MoveBlock()
         {
             if (_movingOnX)
@@ -181,7 +187,9 @@ namespace Stack
             design1.Invalidate(); // Forces the viewport redraw
         }
 
-        // Handles brick placement logic on key press, calculates intersection and creates new brick
+        /// <summary>
+        /// Handles brick placement logic on key press, calculates intersection and creates new brick.
+        /// </summary>
         private void design1_KeyDown(object sender, KeyEventArgs e)
         {
             animationTimer.Stop();
@@ -259,6 +267,9 @@ namespace Stack
             }
         }
 
+        /// <summary>
+        /// Restarts the game when the restart button is clicked.
+        /// </summary>
         private void restartButton_Click(object sender, EventArgs e)
         {
             design1.Entities.Clear();
@@ -266,17 +277,26 @@ namespace Stack
             Init();
         }
 
+        /// <summary>
+        /// Moves the brick on each animation timer tick.
+        /// </summary>
         private void animationTimer_Tick(object sender, EventArgs e)
         {
 	        MoveBlock();
         }
 
+		/// <summary>
+		/// Applies the given color to the mesh.
+		/// </summary>
 		private void SetColor(Mesh mesh, Color color)
         {
 	        mesh.ColorMethod = colorMethodType.byEntity;
 	        mesh.Color = color;
         }
 
+		/// <summary>
+		/// Applies a random color to the mesh.
+		/// </summary>
 		private void SetRandomColor(Mesh mesh)
         {
             mesh.ColorMethod = colorMethodType.byEntity;
